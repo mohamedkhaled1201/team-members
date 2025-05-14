@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Member Info</title>
+  <style>
+    body {
+      font-family: Arial;
+      direction: rtl;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+    .info {
+      background: #e9ecef;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+  </style>
+  <script>
+    
+    const members = {
+      1: {
+        name: "Dina Mohamed Eladly",
+        email: "dina222101444@nmu.edu.eg",
+        major: "Computer Science and Engineering",
+        university: "New Mansoura University"
+      },
+      2: {
+        name: "Nour Osama Farag",
+        email: "nour222101357@nmu.edu.eg",
+        major: "Computer Science and Engineering",
+        university: "New Mansoura University"
+      },
+      3: {
+        name: "Mohamed Khaled Mohamed Younis",
+        email: "mohamed222101491@nmu.edu.eg",
+        major: "Computer Science and Engineering",
+        university: "New Mansoura University"
+      },
+      4: {
+        name: "Ammar Hesham Mohamed Mashaly",
+        email: "Ammar2221010463@nmu.edu.eg",
+        major: "Computer Science and Engineering",
+        university: "New Mansoura University"
+      },
+      5: {
+        name: "Abdelrahman Mohamed Mahmoud Fawzy",
+        email: "Abdelrahman222101451@nmu.edu.eg",
+        major: "Computer Science and Engineering",
+        university: "New Mansoura University"
+      }
+    };
+
+   
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const memberId = params.get("member");
+
+      if (members[memberId]) {
+        const member = members[memberId];
+        document.getElementById("name").innerText = member.name;
+        document.getElementById("email").innerText = member.email;
+        document.getElementById("major").innerText = member.major;
+        document.getElementById("university").innerText = member.university;
+      } else {
+        document.getElementById("info").innerHTML = "<p>لا يوجد بيانات لهذا العضو.</p>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="info" class="info">
+    <p><strong>الاسم:</strong> <span id="name"></span></p>
+    <p><strong>البريد:</strong> <span id="email"></span></p>
+    <p><strong>التخصص:</strong> <span id="major"></span></p>
+    <p><strong>الجامعة:</strong> <span id="university"></span></p>
+  </div>
+</body>
+</html>
